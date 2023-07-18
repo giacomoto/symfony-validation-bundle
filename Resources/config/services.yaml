@@ -1,0 +1,22 @@
+parameters:
+
+services:
+    Giacomoto\Bundle\GiacomotoValidationBundle\Class\BaseConstraint:
+        arguments:
+            $security: '@Symfony\Bundle\SecurityBundle\Security'
+            $parameterBag: '@parameter_bag'
+
+    Giacomoto\Bundle\GiacomotoValidationBundle\Service\ValidationFactoryService:
+        arguments:
+            $security: '@Symfony\Bundle\SecurityBundle\Security'
+            $parameterBag: '@parameter_bag'
+
+    Giacomoto\Bundle\GiacomotoValidationBundle\Service\ValidationService:
+        arguments:
+            $validator: '@validator'
+            $validationFactoryService: '@Giacomoto\Bundle\GiacomotoValidationBundle\Service\ValidationFactoryService'
+
+    Giacomoto\Bundle\GiacomotoValidationBundle\Validator\UniqueConstraintValidator:
+        tags: { name: validator.constraint_validator }
+        arguments:
+            $entityManager: '@Doctrine\ORM\EntityManagerInterface'

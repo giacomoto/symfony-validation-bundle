@@ -1,0 +1,22 @@
+{
+    "name": "giacomoto/symfony-validation",
+    "description": "Symfony Validation based on Symfony Validator",
+    "type": "symfony-bundle",
+    "minimum-stability": "stable",
+    "version": "1.0.0",
+    "require": {
+        "symfony/validator": "6.*",
+        "doctrine/doctrine-bundle": "^2.8"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Giacomoto\\Bundle\\GiacomotoValidationBundle\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "giacomoto"
+        }
+    ]
+}
